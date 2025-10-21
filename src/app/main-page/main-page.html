@@ -1,0 +1,9 @@
+<div class="posts_container">
+    @for (post of posts; track $index) {
+    <div class="post_container">
+        <p>{{post.name}}</p>
+        <img class="post_img" src="{{post.img}}">
+        <p>{{post.likes}}</p>
+    </div>
+    }
+</div>
