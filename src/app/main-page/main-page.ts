@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Post } from '../interfaces/post';
 import { RouterLink } from '@angular/router';
+import { SinglePost } from '../single-post/single-post';
 
 @Component({
   selector: 'app-main-page',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, SinglePost],
   templateUrl: './main-page.html',
   styleUrl: './main-page.scss',
 })
@@ -30,14 +31,4 @@ export class MainPage {
       isLiked: true,
     },
   ];
-
-  toggleLike(post: Post) {
-    if (post.isLiked) {
-      post.isLiked = false;
-      post.likes--;
-    } else {
-      post.isLiked = true;
-      post.likes++;
-    }
-  }
 }

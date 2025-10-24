@@ -1,0 +1,15 @@
+<div class="post_container">
+    <p>{{post.name}}</p>
+    <img class="post_img" src="{{post.img}}">
+    <div class="likes_container">
+        <p>{{post.likes}}</p>
+        <!-- LIKE BUTTONS -->
+        <button class="like_btn" (click)="toggleLike(post)">
+            @if (post.isLiked) {
+            <img src="/img/heart-red.png" alt="Liked" />
+            } @else {
+            <img src="/img/heart-black.png" alt="Unliked" />
+            }
+        </button>
+    </div>
+</div>
