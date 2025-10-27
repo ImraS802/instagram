@@ -12,4 +12,14 @@
             }
         </button>
     </div>
+    <!-- COMMENT -->
+    <div class="comments">
+        @for (comment of post.comments; track $index) {
+        <li>{{ comment }}</li>
+        }
+    </div>
+
+    <input type="text" [(ngModel)]="newComment" placeholder="Kommentieren">
+    <button (click)="sendComment()" [disabled]="!newComment">Senden</button>
+
 </div>

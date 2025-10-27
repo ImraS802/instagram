@@ -1,7 +1,8 @@
 <div class="posts_container">
     @for (post of posts; track $index) {
 
-    <app-single-post [post]="post"></app-single-post>
+    <app-single-post [post]="post" (addCommentEvent)="addComment($event, $index)"></app-single-post>
     }
+    <app-subscribers></app-subscribers>
 </div>
 <a routerLink="/contact">Contact</a>
