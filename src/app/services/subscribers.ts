@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-export class SubscribersService {
+export class Subscribers {
   subscribers = [
     { name: 'Anna Müller', followed: true, followsYou: true },
     { name: 'Bernd Schmidt', followed: false, followsYou: false },
