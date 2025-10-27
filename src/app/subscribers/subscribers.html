@@ -1,22 +1,24 @@
 <div class="subscribers">
-    @for (subscriber of subscribers; track subscriber) {
-    <div class="subscriber-card">
-        <strong>{{ subscriber.name }}</strong>
+    <div class="subscribers-wrapper">
+        @for (subscriber of subscribers; track subscriber) {
+        <div class="subscriber-card">
+            <strong>{{ subscriber.name }}</strong>
 
-        @if (subscriber.followed) {
-        <p>Du folgst dieser Person</p>
-        } @else {
-        <p>Du folgst nicht dieser Person</p>
-        }
+            @if (subscriber.followed) {
+            <p>Du folgst dieser Person</p>
+            } @else {
+            <p>Du folgst nicht dieser Person</p>
+            }
 
-        @if (subscriber.followsYou) {
-        <small>Folgt dir</small>
-        } @else {
-        <small>Folgt dir noch nicht</small>
+            @if (subscriber.followsYou) {
+            <small>Folgt dir</small>
+            } @else {
+            <small>Folgt dir noch nicht</small>
+            }
+            <button class="follow_btn" (click)="toggle(subscriber)">
+                {{ subscriber.followed ? 'Entfolgen' : 'Folgen' }}
+            </button>
+        </div>
         }
-        <button class="follow_btn" (click)="toggle(subscriber)">
-            {{ subscriber.followed ? 'Entfolgen' : 'Folgen' }}
-        </button>
     </div>
-    }
 </div>
